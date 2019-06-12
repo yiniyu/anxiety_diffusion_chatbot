@@ -1,6 +1,6 @@
 class EmotionsController < ApplicationController
   def index
-    @emotions = Emotion.all
+    @emotions = Emotion.page(params[:page]).per(10)
 
     render("emotion_templates/index.html.erb")
   end

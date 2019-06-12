@@ -1,6 +1,6 @@
 class PerspectivesController < ApplicationController
   def index
-    @perspectives = Perspective.all
+    @perspectives = Perspective.page(params[:page]).per(10)
 
     render("perspective_templates/index.html.erb")
   end

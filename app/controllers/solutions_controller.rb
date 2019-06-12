@@ -1,6 +1,6 @@
 class SolutionsController < ApplicationController
   def index
-    @solutions = Solution.all
+    @solutions = Solution.page(params[:page]).per(10)
 
     render("solution_templates/index.html.erb")
   end
