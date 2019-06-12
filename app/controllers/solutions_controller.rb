@@ -1,6 +1,7 @@
 class SolutionsController < ApplicationController
   def index
-    @solutions = Solution.page(params[:page]).per(10)
+    @q = Solution.ransack(params[:q])
+    @solutions = @q.result(:distinct => true).includes(:emotion).page(params[:page]).per(10)
 
     render("solution_templates/index.html.erb")
   end

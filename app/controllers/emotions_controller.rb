@@ -1,6 +1,7 @@
 class EmotionsController < ApplicationController
   def index
-    @emotions = Emotion.page(params[:page]).per(10)
+    @q = Emotion.ransack(params[:q])
+    @emotions = @q.result(:distinct => true).includes(:user, :perspective, :solutions).page(params[:page]).per(10)
 
     render("emotion_templates/index.html.erb")
   end

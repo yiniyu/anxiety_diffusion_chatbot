@@ -1,6 +1,7 @@
 class PerspectivesController < ApplicationController
   def index
-    @perspectives = Perspective.page(params[:page]).per(10)
+    @q = Perspective.ransack(params[:q])
+    @perspectives = @q.result(:distinct => true).includes(:emotion).page(params[:page]).per(10)
 
     render("perspective_templates/index.html.erb")
   end
