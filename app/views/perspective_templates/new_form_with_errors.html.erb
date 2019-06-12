@@ -1,0 +1,68 @@
+<!-- Validation failure messages -->
+<% if @perspective.present? %>
+  <% if @perspective.errors.any? %>
+    <% @perspective.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1>
+  Add a new perspective
+</h1>
+
+
+<hr>
+
+<!-- Form perspective start -->
+<form action="/create_perspective" method="post">
+<!-- Form perspective end -->
+
+  <!-- Label and input for name start -->
+  <div class="form-group">
+    <label for="name">
+      Name
+    </label>
+
+    <!-- Input for name start -->
+    <input type="text" id="name" name="name" class="form-control" value="<%= @perspective.name %>">
+    <!-- Input for name end -->
+  </div>
+  <!-- Label and input for name end -->
+
+  <!-- Label and input for quotes start -->
+  <div class="form-group">
+    <label for="quotes">
+      Quotes
+    </label>
+
+    <!-- Input for quotes start -->
+    <textarea id="quotes" name="quotes" class="form-control" rows="3"><%= @perspective.quotes %></textarea>
+    <!-- Input for quotes end -->
+  </div>
+  <!-- Label and input for quotes end -->
+
+  <!-- Label and input for emotion_id start -->
+  <div class="form-group">
+    <label for="emotion_id">
+      Emotion
+    </label>
+
+    <!-- Input for emotion_id start -->
+    <input type="text" id="emotion_id" name="emotion_id" class="form-control" value="<%= @perspective.emotion_id %>">
+    <!-- Input for emotion_id end -->
+  </div>
+  <!-- Label and input for emotion_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create perspective
+  </button>
+</form>
+
+<hr>
+
+<a href="/perspectives">
+  Go back
+</a>
