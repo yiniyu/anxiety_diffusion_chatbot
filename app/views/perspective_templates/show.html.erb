@@ -11,46 +11,37 @@
         </a>
       </div>
 
-      <!-- Edit link perspective start -->
       <div class="col">
         <a href="/perspectives/<%= @perspective.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit perspective
         </a>
       </div>
-      <!-- Edit link perspective end -->
 
-      <!-- Delete link perspective start -->
       <div class="col">
         <a href="/delete_perspective/<%= @perspective.id %>" class="btn btn-block btn-outline-secondary">
           Delete perspective
         </a>
       </div>
-      <!-- Delete link perspective end -->
     </div>
 
     <dl>
       <dt>
         Name
       </dt>
-      <!-- Display name start -->
       <dd>
         <%= @perspective.name %>
       </dd>
-      <!-- Display name end -->
 
       <dt>
         Quotes
       </dt>
-      <!-- Display quotes start -->
       <dd>
         <%= @perspective.quotes %>
       </dd>
-      <!-- Display quotes end -->
 
       <dt>
         Emotion
       </dt>
-      <!-- Display emotion_id start -->
       <dd>
         <% if @perspective.emotion.present? %>
           <a href="/emotions/<%= @perspective.emotion_id %>">
@@ -58,28 +49,21 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display emotion_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@perspective.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@perspective.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->
