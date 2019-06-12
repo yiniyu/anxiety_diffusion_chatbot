@@ -1,6 +1,9 @@
 class Emotion < ApplicationRecord
   # Direct associations
 
+  has_many   :solutions,
+             :dependent => :nullify
+
   has_one    :perspective,
              :dependent => :destroy
 
