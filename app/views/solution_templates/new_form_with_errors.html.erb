@@ -1,0 +1,56 @@
+<!-- Validation failure messages -->
+<% if @solution.present? %>
+  <% if @solution.errors.any? %>
+    <% @solution.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1>
+  Add a new solution
+</h1>
+
+
+<hr>
+
+<!-- Form solution start -->
+<form action="/create_solution" method="post">
+<!-- Form solution end -->
+
+  <!-- Label and input for description start -->
+  <div class="form-group">
+    <label for="description">
+      Description
+    </label>
+
+    <!-- Input for description start -->
+    <textarea id="description" name="description" class="form-control" rows="3"><%= @solution.description %></textarea>
+    <!-- Input for description end -->
+  </div>
+  <!-- Label and input for description end -->
+
+  <!-- Label and input for emotion_id start -->
+  <div class="form-group">
+    <label for="emotion_id">
+      Emotion
+    </label>
+
+    <!-- Input for emotion_id start -->
+    <input type="text" id="emotion_id" name="emotion_id" class="form-control" value="<%= @solution.emotion_id %>">
+    <!-- Input for emotion_id end -->
+  </div>
+  <!-- Label and input for emotion_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create solution
+  </button>
+</form>
+
+<hr>
+
+<a href="/solutions">
+  Go back
+</a>

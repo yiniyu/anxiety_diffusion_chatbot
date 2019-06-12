@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Solution resource:
+
+  # CREATE
+  get("/solutions/new", { :controller => "solutions", :action => "new_form" })
+  post("/create_solution", { :controller => "solutions", :action => "create_row" })
+
+  # READ
+  get("/solutions", { :controller => "solutions", :action => "index" })
+  get("/solutions/:id_to_display", { :controller => "solutions", :action => "show" })
+
+  # UPDATE
+  get("/solutions/:prefill_with_id/edit", { :controller => "solutions", :action => "edit_form" })
+  post("/update_solution/:id_to_modify", { :controller => "solutions", :action => "update_row" })
+
+  # DELETE
+  get("/delete_solution/:id_to_remove", { :controller => "solutions", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Perspective resource:
 
   # CREATE

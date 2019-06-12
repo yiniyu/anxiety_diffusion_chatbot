@@ -1,0 +1,92 @@
+<div class="row mb-3">
+  <div class="col-md-12">
+    <h1>
+      All solutions
+    </h1>
+
+    <a href="/solutions/new" class="btn btn-block btn-outline-secondary">
+      Add a new solution
+    </a>
+  </div>
+</div>
+
+<!-- Ransack Code start -->
+
+<!-- Ransack Code end -->
+
+<!-- Location Map Code start -->
+
+<!-- Location Map Code end -->
+
+<hr>
+
+<div class="row mb-3">
+  <div class="col-md-12">
+    <table class="table">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Description
+        </th>
+
+        <th>
+          Emotion
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @solutions.each do |solution| %>
+      <tr>
+        <!-- Display solution.id start -->
+        <td>
+          <%= solution.id %>
+        </td>
+        <!-- Display solution.id end -->
+
+        <!-- Display solution.description start -->
+        <td>
+          <%= solution.description %>
+        </td>
+        <!-- Display solution.description end -->
+
+        <!-- Display solution.emotion_id start -->
+        <td>
+          <%= solution.emotion_id %>
+        </td>
+        <!-- Display solution.emotion_id end -->
+
+        <!-- Display solution.created_at start -->
+        <td>
+          <%= time_ago_in_words(solution.created_at) %> ago
+        </td>
+        <!-- Display solution.created_at end -->
+
+        <!-- Display solution.updated_at start -->
+        <td>
+          <%= time_ago_in_words(solution.updated_at) %> ago
+        </td>
+        <!-- Display solution.updated_at end -->
+
+        <td>
+          <a href="/solutions/<%= solution.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
