@@ -40,7 +40,7 @@
     </label>
 
     <!-- Input for emotion_id start -->
-    <input type="text" id="emotion_id" name="emotion_id" class="form-control">
+    <%= select_tag(:emotion_id, options_from_collection_for_select(Emotion.all, :id, :name, @perspective.emotion_id), :class => "form-control") %>
     <!-- Input for emotion_id end -->
   </div>
   <!-- Label and input for emotion_id end -->
