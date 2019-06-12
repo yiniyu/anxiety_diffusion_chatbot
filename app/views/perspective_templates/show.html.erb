@@ -52,7 +52,11 @@
       </dt>
       <!-- Display emotion_id start -->
       <dd>
-        <%= @perspective.emotion_id %>
+        <% if @perspective.emotion.present? %>
+          <a href="/emotions/<%= @perspective.emotion_id %>">
+            <%= @perspective.emotion.name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display emotion_id end -->
 

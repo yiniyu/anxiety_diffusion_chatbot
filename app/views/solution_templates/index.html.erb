@@ -64,7 +64,11 @@
 
         <!-- Display solution.emotion_id start -->
         <td>
-          <%= solution.emotion.name %>
+          <% if solution.emotion.present? %>
+            <a href="/emotions/<%= solution.emotion.id %>">
+              <%= solution.emotion.name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display solution.emotion_id end -->
 

@@ -74,7 +74,11 @@
 
         <!-- Display perspective.emotion_id start -->
         <td>
-          <%= perspective.emotion.name %>
+          <% if perspective.emotion.present? %>
+            <a href="/emotions/<%= perspective.emotion.id %>">
+              <%= perspective.emotion.name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display perspective.emotion_id end -->
 

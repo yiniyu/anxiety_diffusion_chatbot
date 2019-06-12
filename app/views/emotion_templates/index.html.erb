@@ -64,7 +64,11 @@
 
         <!-- Display emotion.user_id start -->
         <td>
-          <%= emotion.user.email %>
+          <% if emotion.user.present? %>
+            <a href="/users/<%= emotion.user.id %>">
+              <%= emotion.user.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display emotion.user_id end -->
 
