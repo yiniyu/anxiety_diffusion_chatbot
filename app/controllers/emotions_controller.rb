@@ -43,7 +43,7 @@ class EmotionsController < ApplicationController
     @emotion = Emotion.find(params.fetch("id_to_modify"))
 
     @emotion.name = params.fetch("name")
-    @emotion.user_id = params.fetch("user_id")
+    
 
     if @emotion.valid?
       @emotion.save
