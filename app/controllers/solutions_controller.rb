@@ -53,6 +53,14 @@ class SolutionsController < ApplicationController
     end
   end
 
+  def destroy_row_from_emotion
+    @solution = Solution.find(params.fetch("id_to_remove"))
+
+    @solution.destroy
+
+    redirect_to("/emotions/#{@solution.emotion_id}", notice: "Solution deleted successfully.")
+  end
+
   def destroy_row
     @solution = Solution.find(params.fetch("id_to_remove"))
 

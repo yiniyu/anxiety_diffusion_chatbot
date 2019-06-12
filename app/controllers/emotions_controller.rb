@@ -53,6 +53,14 @@ class EmotionsController < ApplicationController
     end
   end
 
+  def destroy_row_from_user
+    @emotion = Emotion.find(params.fetch("id_to_remove"))
+
+    @emotion.destroy
+
+    redirect_to("/users/#{@emotion.user_id}", notice: "Emotion deleted successfully.")
+  end
+
   def destroy_row
     @emotion = Emotion.find(params.fetch("id_to_remove"))
 
