@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "perspectives#index"
   # Routes for the Emotion resource:
 
   # CREATE
