@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Emotion resource:
+
+  # CREATE
+  get("/emotions/new", { :controller => "emotions", :action => "new_form" })
+  post("/create_emotion", { :controller => "emotions", :action => "create_row" })
+
+  # READ
+  get("/emotions", { :controller => "emotions", :action => "index" })
+  get("/emotions/:id_to_display", { :controller => "emotions", :action => "show" })
+
+  # UPDATE
+  get("/emotions/:prefill_with_id/edit", { :controller => "emotions", :action => "edit_form" })
+  post("/update_emotion/:id_to_modify", { :controller => "emotions", :action => "update_row" })
+
+  # DELETE
+  get("/delete_emotion/:id_to_remove", { :controller => "emotions", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Solution resource:
 
   # CREATE
