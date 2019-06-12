@@ -6,6 +6,7 @@ class EmotionsController < ApplicationController
   end
 
   def show
+    @solution = Solution.new
     @emotion = Emotion.find(params.fetch("id_to_display"))
 
     render("emotion_templates/show.html.erb")

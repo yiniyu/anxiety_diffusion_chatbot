@@ -27,6 +27,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/solutions/new", { :controller => "solutions", :action => "new_form" })
   post("/create_solution", { :controller => "solutions", :action => "create_row" })
+  post("/create_solution_from_emotion", { :controller => "solutions", :action => "create_row_from_emotion" })
 
   # READ
   get("/solutions", { :controller => "solutions", :action => "index" })

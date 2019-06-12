@@ -32,6 +32,21 @@ class SolutionsController < ApplicationController
     end
   end
 
+  def create_row_from_emotion
+    @solution = Solution.new
+
+    @solution.description = params.fetch("description")
+    @solution.emotion_id = params.fetch("emotion_id")
+
+    if @solution.valid?
+      @solution.save
+
+      redirect_to("/emotions/#{@solution.emotion_id}", notice: "Solution created successfully.")
+    else
+      render("solution_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @solution = Solution.find(params.fetch("prefill_with_id"))
 
